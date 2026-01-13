@@ -1,0 +1,225 @@
+/* =========================
+   ROOT VARIABLES
+========================= */
+:root {
+  --primary: #646cff;
+  --primary-dark: #535bf2;
+
+  --bg-light: #f5f7fb;
+  --bg-dark: #121212;
+
+  --card-light: #ffffff;
+  --card-dark: #1e1e1e;
+
+  --text-light: #213547;
+  --text-dark: #f1f1f1;
+
+  --border-light: #e5e7eb;
+  --border-dark: #3a3a3a;
+
+  --border-radius: 12px;
+  --shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+}
+
+/* =========================
+   GLOBAL RESET
+========================= */
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+/* =========================
+   THEME VARIABLES
+========================= */
+body[data-theme="light"] {
+  background-color: var(--bg-light);
+  color: var(--text-light);
+
+  --card-bg: var(--card-light);
+  --text: var(--text-light);
+  --text-muted: rgba(0, 0, 0, 0.6);
+  --border: var(--border-light);
+}
+
+body[data-theme="dark"] {
+  background-color: var(--bg-dark);
+  color: var(--text-dark);
+
+  --card-bg: var(--card-dark);
+  --text: var(--text-dark);
+  --text-muted: rgba(255, 255, 255, 0.6);
+  --border: var(--border-dark);
+}
+
+/* =========================
+   COMMON LAYOUT
+========================= */
+.container {
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+/* =========================
+   CARD
+========================= */
+.card {
+  width: 100%;
+  max-width: 420px;
+  background: var(--card-bg);
+  padding: 30px;
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow);
+}
+
+.dashboard-card {
+  max-width: 100%;
+}
+
+/* =========================
+   TEXT
+========================= */
+h1,
+h2,
+h3 {
+  margin-bottom: 15px;
+  text-align: center;
+  color: var(--text);
+}
+
+p {
+  opacity: 0.85;
+  margin-bottom: 10px;
+  color: var(--text);
+}
+
+/* =========================
+   INPUTS
+========================= */
+input,
+select {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 14px;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  outline: none;
+  font-size: 14px;
+  background: var(--card-bg);
+  color: var(--text);
+}
+
+input::placeholder {
+  color: var(--text-muted);
+}
+
+/* =========================
+   PASSWORD FIELD
+========================= */
+.password-field {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.password-field input {
+  flex: 1;
+  margin-bottom: 0;
+}
+
+.toggle-btn {
+  width: auto;
+  padding: 8px 12px;
+  font-size: 13px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: transparent;
+  color: var(--text);
+  cursor: pointer;
+}
+
+/* =========================
+   BUTTONS
+========================= */
+button {
+  padding: 12px;
+  border-radius: 8px;
+  border: none;
+  background: var(--primary);
+  color: white;
+  font-size: 15px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+button:hover {
+  background: var(--primary-dark);
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.15);
+}
+
+button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.primary-btn {
+  width: 100%;
+  margin-top: 10px;
+}
+
+/* =========================
+   LINKS
+========================= */
+.link {
+  margin-top: 15px;
+  text-align: center;
+}
+
+.link a {
+  color: var(--primary);
+  font-weight: 500;
+  text-decoration: none;
+}
+
+/* =========================
+   ACTION ROW
+========================= */
+.action-row {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+  flex-wrap: wrap;
+}
+
+.action-row button {
+  width: auto;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+@media (max-width: 480px) {
+  .card {
+    padding: 22px;
+  }
+
+  h1 {
+    font-size: 26px;
+  }
+
+  h2 {
+    font-size: 22px;
+  }
+}
